@@ -24,6 +24,7 @@
             background: rgba(122, 154, 204, 0.774);
             width: 100%;
             height: 100vh;
+        
         }
 
         #calculadoras {
@@ -31,6 +32,8 @@
             flex-wrap: wrap;
             justify-content: center;
             margin: 8px;
+            transition: 0.4s;
+            margin-top: 80px;
         }
 
 
@@ -48,7 +51,10 @@
             margin: 4px;
             border-radius: 8px;
             text-align: center;
-            transition: 1s;
+            transition: 0.4s;
+            scale: 0.1;
+            opacity: 0;
+            
         }
  
         #frm1 input, #frm2 input, #frm3 input, #frm4 input, #frm5 input, #frm6 input, #frm7 input {
@@ -70,12 +76,16 @@
             user-select: none;
             width: 100%;   
             justify-content: space-around;   
+            position: fixed;
+            z-index: 10;
         }
 
         #div-lista ul {
             display: flex;
             width: 100%;
             justify-content: center;
+            background-color: rgba(154, 154, 154, 0.377);
+            padding: 4px;
         }
 
         #div-lista li:hover {
@@ -95,7 +105,7 @@
             text-align: center;
             justify-content: space-around;
             font-weight: 700;
-            border-radius: 4px;
+            /* border-radius: 4px; */
             margin:2px;
         }
 
@@ -199,6 +209,9 @@
             #frm1, #frm2, #frm3, #frm4, #frm5, #frm6, #frm7 {
                 width: 100%;
             }
+            #calculadoras {
+            margin-top: 60px;
+        }
         }
 
 
@@ -404,12 +417,28 @@
         
         if (lecForm.style.display == "none") {
             lecForm.style.display = "flex" 
+            lecForm.style.opacity = "1"
             lecBtn.style.background = "rgba(85, 255, 0, 0.395)"  
+            setTimeout(animLec, 10)
+            function animLec () {
+                lecForm.style.scale = "1"
+            }
         } else {
-            lecForm.style.display = "none"
+            lecForm.style.scale = "0.1"
+            lecForm.style.opacity = "0"
             lecBtn.style.background = "grey"  
+            setTimeout(animLecBack, 500)
+            function animLecBack() {
+                lecForm.style.display = "none"
+        
+            }
         }
+
+
+
     })
+
+
 
     function Calculate() {
         var custoDeProducao = parseInt(document.getElementById("custo-de-producao").value);
@@ -433,10 +462,21 @@
         
       if (lecJurosForm.style.display == "none") {
           lecJurosForm.style.display = "flex" 
+          lecJurosForm.style.opacity = "1"
           lecJurosBtn.style.background = "rgba(85, 255, 0, 0.395)"  
+          setTimeout(animJurosLec, 10)
+            function animJurosLec () {
+                lecJurosForm.style.scale = "1"
+            }
       } else {
-          lecJurosForm.style.display = "none"
+          lecJurosForm.style.scale = "0.1"
+          lecJurosForm.style.opacity = "0"
           lecJurosBtn.style.background = "grey"
+          setTimeout(animLecJurosBack, 500)
+            function animLecJurosBack() {
+                lecJurosForm.style.display = "none"
+        
+            }
       }
   })
 
@@ -460,12 +500,23 @@
     pmeBtn.addEventListener('click', () => {
       
         
-      if (pmeForm.style.display == "none") {
-          pmeForm.style.display = "flex"   
-          pmeBtn.style.background = "rgba(85, 255, 0, 0.395)"
+        if (pmeForm.style.display == "none") {
+          pmeForm.style.display = "flex" 
+          pmeForm.style.opacity = "1"
+          pmeBtn.style.background = "rgba(85, 255, 0, 0.395)"  
+          setTimeout(animJurosLec, 10)
+            function animJurosLec () {
+                pmeForm.style.scale = "1"
+            }
       } else {
-          pmeForm.style.display = "none"
+          pmeForm.style.scale = "0.1"
+          pmeForm.style.opacity = "0"
           pmeBtn.style.background = "grey"
+          setTimeout(animpmeBack, 500)
+            function animpmeBack() {
+                pmeForm.style.display = "none"
+        
+            }
       }
   })
 
@@ -488,12 +539,23 @@
     pmcBtn.addEventListener('click', () => {
       
         
-      if (pmcForm.style.display == "none") {
-          pmcForm.style.display = "flex"   
-          pmcBtn.style.background = "rgba(85, 255, 0, 0.395)"
+        if (pmcForm.style.display == "none") {
+          pmcForm.style.display = "flex" 
+          pmcForm.style.opacity = "1"
+          pmcBtn.style.background = "rgba(85, 255, 0, 0.395)"  
+          setTimeout(animJurosLec, 10)
+            function animJurosLec () {
+                pmcForm.style.scale = "1"
+            }
       } else {
-          pmcForm.style.display = "none"
+          pmcForm.style.scale = "0.1"
+          pmcForm.style.opacity = "0"
           pmcBtn.style.background = "grey"
+          setTimeout(animpmcBack, 500)
+            function animpmcBack() {
+                pmcForm.style.display = "none"
+        
+            }
       }
   })
 
@@ -516,12 +578,23 @@
     coBtn.addEventListener('click', () => {
       
         
-      if (coForm.style.display == "none") {
-          coForm.style.display = "flex"   
-          coBtn.style.background = "rgba(85, 255, 0, 0.395)"
+        if (coForm.style.display == "none") {
+          coForm.style.display = "flex" 
+          coForm.style.opacity = "1"
+          coBtn.style.background = "rgba(85, 255, 0, 0.395)"  
+          setTimeout(animJurosLec, 10)
+            function animJurosLec () {
+                coForm.style.scale = "1"
+            }
       } else {
-          coForm.style.display = "none"
+          coForm.style.scale = "0.1"
+          coForm.style.opacity = "0"
           coBtn.style.background = "grey"
+          setTimeout(animcoBack, 500)
+            function animcoBack() {
+                coForm.style.display = "none"
+        
+            }
       }
   })
 
@@ -541,12 +614,23 @@
     pmpBtn.addEventListener('click', () => {
       
         
-      if (pmpForm.style.display == "none") {
-          pmpForm.style.display = "flex"  
-          pmpBtn.style.background = "rgba(85, 255, 0, 0.395)" 
+        if (pmpForm.style.display == "none") {
+          pmpForm.style.display = "flex" 
+          pmpForm.style.opacity = "1"
+          pmpBtn.style.background = "rgba(85, 255, 0, 0.395)"  
+          setTimeout(animJurosLec, 10)
+            function animJurosLec () {
+                pmpForm.style.scale = "1"
+            }
       } else {
-          pmpForm.style.display = "none"
+          pmpForm.style.scale = "0.1"
+          pmpForm.style.opacity = "0"
           pmpBtn.style.background = "grey"
+          setTimeout(animpmpBack, 500)
+            function animpmpBack() {
+                pmpForm.style.display = "none"
+        
+            }
       }
   })
 
@@ -575,12 +659,23 @@
     cfBtn.addEventListener('click', () => {
       
         
-      if (cfForm.style.display == "none") {
-          cfForm.style.display = "flex"
-          cfBtn.style.background = "rgba(85, 255, 0, 0.395)"   
+        if (cfForm.style.display == "none") {
+          cfForm.style.display = "flex" 
+          cfForm.style.opacity = "1"
+          cfBtn.style.background = "rgba(85, 255, 0, 0.395)"  
+          setTimeout(animCf, 10)
+            function animCf () {
+                cfForm.style.scale = "1"
+            }
       } else {
-          cfForm.style.display = "none"
+          cfForm.style.scale = "0.1"
+          cfForm.style.opacity = "0"
           cfBtn.style.background = "grey"
+          setTimeout(animcfBack, 500)
+            function animcfBack() {
+                cfForm.style.display = "none"
+        
+            }
       }
   })
 
