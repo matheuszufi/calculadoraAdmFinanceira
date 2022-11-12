@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulas Administração Financeira</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        * {
+            box-sizing: border-box;
+            font-family: 'Poppins';
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            background: rgb(125, 136, 179);
+            width: 100%;
+            height: 100vh;
+        }
+
+        #calculadoras {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 8px;
+        }
+
+        #frm1, #frm2, #frm3, #frm4, #frm5, #frm6, #frm7 {
+            background-color: rgba(214, 214, 214, 0.324);
+            color: white;
+            display: none;
+            flex-direction: column;
+            width: 350px;
+            justify-content: center;
+            align-items: center;
+            padding: 4px;
+            margin: 4px;
+            border-radius: 8px;
+            text-align: center;
+        }
+ 
+        #div-lista {
+            display: flex;
+            font-size: 20px;
+            user-select: none;
+            width: 100%;   
+            justify-content: space-around;   
+        }
+
+        #div-lista ul {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+        }
+
+        #div-lista li:hover {
+            background-color: rgb(160, 160, 160);
+        }
+
+        #div-lista li {
+            transition: 0.5s;
+            background-color: rgb(94, 94, 94);
+            color: white;
+            display: flex;
+            align-items:center;
+            padding: 12px;
+            list-style: none;
+            border: 1px solid rgb(123, 123, 123);
+            text-align: center;
+            justify-content: space-around;
+            font-weight: bold;
+            border-radius: 4px;
+            margin:2px;
+        }
+
+        input[type=button] {
+            margin-top: 8px;
+            border: none;
+            padding: 8px;
+        }
+
+        .cresultado {
+            margin-top: 8px;
+            border: 1px solid grey;
+            border-radius: 4px;
+            background-color: rgba(240, 240, 240, 0.4);
+            height: 40px;
+            width: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        input[type=number] {
+            border: none;
+            background-color: rgba(108, 108, 108, 0.3);
+            border-radius: 2px;
+            color: white;
+            text-align: center;
+        }
+
+
+    </style>
+</head>
+<body>
+      
+    <div id="div-lista">
+        <ul>
+            <li id="lec-btn">LEC</li>
+            <li id="lec-juros-btn">LEC c/ JUROS</li>
+            <li id="pme-btn">PME</li>
+            <li id="pmc-btn">PMC</li>
+            <li id="co-btn">CO</li>
+            <li id="pmp-btn">PMP</li>
+            <li id="cf-btn">CF</li>
+        </ul>
+    </div>
+
+
+
+    <!-- CALCULADORAS-->
+    <!-- CALCULADORAS-->
+    <!-- CALCULADORAS-->
+
+    <div id="calculadoras">
+
+
+    <!-- LOTE ECONOMICO DE COMPRA SEM JUROS -->
+    <form id="frm1">
+        <h2>LOTE ECONÔMICO DE COMPRA</h2>
+
+            <p>Custo de Produção</p>
+            <input type="number" id="custo-de-producao" placeholder="">
+                
+            <p>Demanda</p>
+            <input type="number" id="demanda" placeholder="">
+                        
+            <p>Custo de Compra</p>
+            <input type="number" id="custodecompra" placeholder="">
+                
+            <p class="cresultado" id="lote-economico-de-compra"></p>
+
+            <input type="button" onclick="Calculate()" value="CALCULAR">
+        </form>
+
+        <!-- LOTE ECONOMICO DE COMPRA COM JUROS -->
+        <form id="frm2">
+            <h2>LOTE ECÔNOMICO DE COMPRA c/ JUROS</h2>
+
+            <p>Custo de Produção</p>
+            <input type="number" id="custo-de-producao2" placeholder="">
+                    
+            <p>Demanda</p>
+            <input type="number" id="demanda2" placeholder="">
+                    
+            <p>Juros</p>
+            <input type="number" id="juros2" placeholder="">
+                    
+            <p>Custo de Compra</p>
+            <input type="number" id="custodecompra2" placeholder="">
+                    
+            <p class="cresultado" id="lote-economico-de-compra2"></p>
+
+            <input type="button" onclick="Calculate2()" value="CALCULAR">
+        </form>
+
+        <!-- PRAZO MÉDIO DE ESTOQUE -->
+        <form id="frm3">
+            <h2>PRAZO MÉDIO DE ESTOQUE</h2>
+
+            <p>Saldo de Estoque do Ano atual</p>
+            <input type="number" id="saldo-de-estoque-do-ano-atual" placeholder="">
+        
+            <p>Saldo de Estoque do Ano anterior</p>
+            <input type="number" id="saldo-de-estoque-do-ano-anterior" placeholder="">
+                
+            <p>Custo de mercadorias Vendidas</p>
+            <input type="number" id="custo-de-mercadorias-vendidas" placeholder="">
+                    
+            <p class="cresultado" id="prazo-medio-de-estoque"></p>
+
+            <input type="button" onclick="Calculate3()" value="CALCULAR">
+        </form>
+
+        <!-- PRAZO MÉDIO DE COBRANÇA -->
+        <form id="frm4">
+            <h2>PRAZO MÉDIO DE COBRANÇA</h2>
+
+            <p>Saldo de Duplicatas do Ano atual</p>
+            <input type="number" id="saldo-de-duplicatas-do-ano-atual" placeholder="">
+        
+            <p>Saldo de Duplicatas do Ano anterior</p>
+            <input type="number" id="saldo-de-duplicatas-do-ano-anterior" placeholder="">       
+        
+            <p>Receita Bruta de Vendas</p>
+            <input type="number" id="receita-bruta-de-vendas" placeholder="">
+                    
+            <p class="cresultado" id="prazo-medio-de-cobranca"></p>
+
+            <input type="button" onclick="Calculate4()" value="CALCULAR">
+        </form>
+
+        <!-- CICLO OPERACIONAL -->
+        <form id="frm5">
+            <h2>CICLO OPERACIONAL</h2>
+
+            <p>Prazo médio de Estoque</p>
+            <input type="number" id="co-prazo-medio-de-estoque" placeholder="">
+        
+            <p>Prazo médio de cobrança</p>
+            <input type="number" id="co-prazo-medio-de-cobranca" placeholder="">       
+        
+            <p class="cresultado" id="ciclo-operacional"></p>
+
+            <input type="button" onclick="Calculate5()" value="CALCULAR">
+        </form>
+
+        <!-- PRAZO MÉDIO DE PAGAMENTO -->
+        <form id="frm6">
+            <h2>PRAZO MÉDIO DE PAGAMENTO</h2>
+
+            <p>Fornecedor Ano Anterior</p>
+            <input type="number" id="pmp-fornecedor-ano-anterior" placeholder="">
+        
+            <p>Fornecedor Ano Atual</p>
+            <input type="number" id="pmp-fornecedor-ano-atual" placeholder="">     
+            
+            <p>Estoque Ano Atual</p>
+            <input type="number" id="pmp-estoque-ano-atual" placeholder=""> 
+            
+            <p>Estoque Ano Anterior</p>
+            <input type="number" id="pmp-estoque-ano-anterior" placeholder=""> 
+
+            <p>Custo de Mercadorias Vendidas</p>
+            <input type="number" id="pmp-custo-de-mercadorias-vendidas" placeholder=""> 
+
+            <p>Aliquota</p>
+            <input type="number" id="pmp-aliquota" placeholder=""> 
+        
+            <p class="cresultado" id="prazo-medio-de-pagamento"></p>
+
+            <input type="button" onclick="Calculate6()" value="CALCULAR">
+        </form>
+
+        <!-- CICLO FINANCEIRAO -->
+        <form id="frm7">
+            <h2>CICLO FINANCEIRO</h2>
+
+            <p>Prazo Médio de Estoque</p>
+            <input type="number" id="cf-prazo-medio-de-estoque" placeholder="">
+        
+            <p>Prazo Médio de Cobrança</p>
+            <input type="number" id="cf-prazo-medio-de-cobranca" placeholder="">     
+            
+            <p>Prazo Médio de Pagamento</p>
+            <input type="number" id="cf-prazo-medio-de-pagamento" placeholder=""> 
+        
+            <p class="cresultado" id="ciclo-financeiro"></p>
+
+            <input type="button" onclick="Calculate7()" value="CALCULAR">
+        </form>
+
+
+
+
+
+    </div>
+</body>
+
+
+
+<!-- SCRIPT -->
+<!-- SCRIPT -->
+<!-- SCRIPT -->
+<!-- SCRIPT -->
+<!-- SCRIPT -->
+<!-- SCRIPT -->
+<!-- SCRIPT -->
+    
+<script>
+
+    // LOTE ECONOMICO DE COMPRA
+    const lecBtn = document.getElementById('lec-btn');
+
+    const lecForm = document.getElementById('frm1');
+    lecBtn.addEventListener('click', () => {
+      
+        
+        if (lecForm.style.display == "none") {
+            lecForm.style.display = "flex"   
+        } else {
+            lecForm.style.display = "none"
+        }
+    })
+
+    function Calculate() {
+        var custoDeProducao = parseInt(document.getElementById("custo-de-producao").value);
+        var demanda = parseInt(document.getElementById("demanda").value);
+        // var juros = parseInt(document.getElementById("juros").value);
+        var custoDeCompra = parseFloat(document.getElementById("custodecompra").value);
+
+
+        var loteEconomicoDeCompra = Math.sqrt((2 * custoDeProducao) * demanda/ custoDeCompra).toFixed(2);
+        document.getElementById("lote-economico-de-compra").innerHTML = `R$${loteEconomicoDeCompra}`;
+    }
+
+
+    //LOTE ECONOMICO DE COMPRAS COM JUROS
+    //LOTE ECONOMICO DE COMPRAS COM JUROS
+    //LOTE ECONOMICO DE COMPRAS COM JUROS
+    const lecJurosBtn = document.getElementById('lec-juros-btn');
+    const lecJurosForm = document.getElementById('frm2');
+    lecJurosBtn.addEventListener('click', () => {
+      
+        
+      if (lecJurosForm.style.display == "none") {
+          lecJurosForm.style.display = "flex"   
+      } else {
+          lecJurosForm.style.display = "none"
+      }
+  })
+
+    function Calculate2() {
+        var custoDeProducao2 = parseInt(document.getElementById("custo-de-producao2").value);
+        var demanda2 = parseInt(document.getElementById("demanda2").value);
+        var juros2 = parseInt(document.getElementById("juros2").value);
+        var custoDeCompra2 = parseFloat(document.getElementById("custodecompra2").value);
+
+
+        var loteEconomicoDeCompra2 = Math.sqrt((2 * custoDeProducao2) * demanda2/ custoDeCompra2).toFixed(2);
+        document.getElementById("lote-economico-de-compra2").innerHTML = `R$${loteEconomicoDeCompra2}`;
+    }
+
+    
+    //PRAZO MEDIO DE ESTOQUE
+    //PRAZO MEDIO DE ESTOQUE
+    //PRAZO MEDIO DE ESTOQUE
+    const pmeBtn = document.getElementById('pme-btn');
+    const pmeForm = document.getElementById('frm3');
+    pmeBtn.addEventListener('click', () => {
+      
+        
+      if (pmeForm.style.display == "none") {
+          pmeForm.style.display = "flex"   
+      } else {
+          pmeForm.style.display = "none"
+      }
+  })
+
+    function Calculate3() {
+        var saldoDeEstoqueDoAnoAtual = parseInt(document.getElementById("saldo-de-estoque-do-ano-atual").value);
+        var saldoDeEstoqueDoAnoAnterior = parseInt(document.getElementById("saldo-de-estoque-do-ano-anterior").value);
+        var custoDeMercadoriasVendidas = parseInt(document.getElementById("custo-de-mercadorias-vendidas").value);
+
+
+
+        var prazoMedioDeEstoque = (((saldoDeEstoqueDoAnoAtual + saldoDeEstoqueDoAnoAnterior)/2) * 360) / custoDeMercadoriasVendidas
+        document.getElementById("prazo-medio-de-estoque").innerHTML = `${prazoMedioDeEstoque} DIAS`;
+    }
+
+    //PRAZO MEDIO DE COBRANÇA
+    //PRAZO MEDIO DE COBRANÇA
+    //PRAZO MEDIO DE COBRANÇA
+    const pmcBtn = document.getElementById('pmc-btn');
+    const pmcForm = document.getElementById('frm4');
+    pmcBtn.addEventListener('click', () => {
+      
+        
+      if (pmcForm.style.display == "none") {
+          pmcForm.style.display = "flex"   
+      } else {
+          pmcForm.style.display = "none"
+      }
+  })
+
+    function Calculate4() {
+        var saldoDeDuplicatasDoAnoAtual = parseInt(document.getElementById("saldo-de-duplicatas-do-ano-atual").value);
+        var saldoDeDuplicatasDoAnoAnterior = parseInt(document.getElementById("saldo-de-duplicatas-do-ano-anterior").value);
+        var receitaBrutaDeVendas = parseInt(document.getElementById("receita-bruta-de-vendas").value);
+
+
+
+        var prazoMedioDeCompra = ((((saldoDeDuplicatasDoAnoAtual + saldoDeDuplicatasDoAnoAnterior)/2) * 360) / receitaBrutaDeVendas).toFixed(2)
+        document.getElementById("prazo-medio-de-cobranca").innerHTML = `${prazoMedioDeCompra} DIAS`;
+    }
+
+    //CICLO OPERACIONAL
+    //CICLO OPERACIONAL
+    //CICLO OPERACIONAL
+    const coBtn = document.getElementById('co-btn');
+    const coForm = document.getElementById('frm5');
+    coBtn.addEventListener('click', () => {
+      
+        
+      if (coForm.style.display == "none") {
+          coForm.style.display = "flex"   
+      } else {
+          coForm.style.display = "none"
+      }
+  })
+
+    function Calculate5() {
+        var coPrazoMedioDeEstoque = parseInt(document.getElementById("co-prazo-medio-de-estoque").value);
+        var coPrazoMedioDeCobranca = parseInt(document.getElementById("co-prazo-medio-de-cobranca").value);
+
+        var cicloOperacional = coPrazoMedioDeEstoque + coPrazoMedioDeCobranca
+        document.getElementById("ciclo-operacional").innerHTML = `${cicloOperacional} DIAS`;
+    }
+
+    //PRAZO MEDIO DE PAGAMENTO
+    //PRAZO MEDIO DE PAGAMENTO
+    //PRAZO MEDIO DE PAGAMENTO
+    const pmpBtn = document.getElementById('pmp-btn');
+    const pmpForm = document.getElementById('frm6');
+    pmpBtn.addEventListener('click', () => {
+      
+        
+      if (pmpForm.style.display == "none") {
+          pmpForm.style.display = "flex"   
+      } else {
+          pmpForm.style.display = "none"
+      }
+  })
+
+    function Calculate6() {
+        var pmpFornecedorAnoAnterior = parseInt(document.getElementById("pmp-fornecedor-ano-anterior").value);
+        var pmpFornecedorAnoAtual = parseInt(document.getElementById("pmp-fornecedor-ano-atual").value);
+        var pmpEstoqueAnoAnterior = parseInt(document.getElementById("pmp-estoque-ano-anterior").value);
+        var pmpEstoqueAnoAtual = parseInt(document.getElementById("pmp-estoque-ano-atual").value);
+        var pmpCustoDeMercadoriasVendidas = parseInt(document.getElementById("pmp-custo-de-mercadorias-vendidas").value);
+        var pmpAliquota = parseFloat(document.getElementById("pmp-aliquota").value);
+
+
+        var prazoMedioDePagamentoCima = ((pmpFornecedorAnoAnterior + pmpFornecedorAnoAtual) / 2) * 360
+        var prazoMedioDePagamentoBaixo = ((pmpEstoqueAnoAtual - pmpEstoqueAnoAnterior) + pmpCustoDeMercadoriasVendidas)
+        var prazoMedioDePagamentoBaixoAliquota =  1 - pmpAliquota
+        var prazoMedioDePagamento = prazoMedioDePagamentoCima / (prazoMedioDePagamentoBaixo / prazoMedioDePagamentoBaixoAliquota)
+
+        document.getElementById("prazo-medio-de-pagamento").innerHTML = `${prazoMedioDePagamento} DIAS`;
+    }
+
+    //CICLO FINANCEIRO
+    //CICLO FINANCEIRO
+    //CICLO FINANCEIRO
+    const cfBtn = document.getElementById('cf-btn');
+    const cfForm = document.getElementById('frm7');
+    cfBtn.addEventListener('click', () => {
+      
+        
+      if (cfForm.style.display == "none") {
+          cfForm.style.display = "flex"   
+      } else {
+          cfForm.style.display = "none"
+      }
+  })
+
+    function Calculate7() {
+        var cf = parseInt(document.getElementById("pmp-fornecedor-ano-anterior").value);
+        var cfPrazoMedioDeEstoque = parseInt(document.getElementById("cf-prazo-medio-de-estoque").value);
+        var cfPrazoMedioDeCobranca = parseInt(document.getElementById("cf-prazo-medio-de-cobranca").value);
+        var cfPrazoMedioDePagamento = parseInt(document.getElementById("cf-prazo-medio-de-pagamento").value);
+
+
+
+        var cicloFinanceiro = (cfPrazoMedioDeEstoque + cfPrazoMedioDeCobranca) - cfPrazoMedioDePagamento
+
+        document.getElementById("ciclo-financeiro").innerHTML = `${cicloFinanceiro} DIAS`;
+    }
+
+
+
+    </script>   
+
+
+
+</html>
+</body>
+</html>
