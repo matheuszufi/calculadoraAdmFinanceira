@@ -21,7 +21,7 @@
         body {
             display: flex;
             flex-direction: column;
-            background: rgb(125, 136, 179);
+            background: rgba(122, 154, 204, 0.774);
             width: 100%;
             height: 100vh;
         }
@@ -36,7 +36,8 @@
 
 
         #frm1, #frm2, #frm3, #frm4, #frm5, #frm6, #frm7 {
-            background-color: rgba(214, 214, 214, 0.324);
+            background-color: rgba(255, 255, 255, 0.3);
+            border: 1px solid white;
             color: white;
             display: none;
             flex-direction: column;
@@ -201,6 +202,13 @@
         }
 
 
+        form i {
+            transition: 0.4s;
+        }
+        form i:hover {
+            color: rgb(68, 68, 68);
+            scale: 1.5;
+        }
 
 
 
@@ -596,7 +604,7 @@
 
     const custoDeProducaoInfo = document.getElementById('custo-de-producao-info');
     const cpInfo = document.getElementById('cp-info');
-    custoDeProducaoInfo.addEventListener('mouseenter', () => {
+    custoDeProducaoInfo.addEventListener('click', () => {
             cpInfo.style.display = "flex"
     })
     custoDeProducaoInfo.addEventListener('mouseleave', () => {
