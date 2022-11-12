@@ -149,6 +149,7 @@
             font-weight: bolder;
             text-shadow: 1px 1px 1px black;
             justify-content: center;
+            user-select: none;
         }
        
         #lec-info {
@@ -158,7 +159,7 @@
             padding: 12px;
             color: rgb(255, 255, 255);
             width: 200px;
-
+       
             font-family: 'Poppins';
             font-weight: bolder;
             text-shadow: 1px 1px 1px black;
@@ -222,6 +223,8 @@
             color: rgb(68, 68, 68);
             scale: 1.5;
         }
+
+
 
 
 
@@ -697,23 +700,38 @@
 
     //INFOS
 
+    // //CUSTO DE PRODUCAO INFO
     const custoDeProducaoInfo = document.getElementById('custo-de-producao-info');
     const cpInfo = document.getElementById('cp-info');
     custoDeProducaoInfo.addEventListener('click', () => {
+        if (cpInfo.style.display == "none") {
             cpInfo.style.display = "flex"
+        } else {
+            cpInfo.style.display = "none"
+        }
     })
+
     custoDeProducaoInfo.addEventListener('mouseleave', () => {
         cpInfo.style.display = "none"
     })
 
+
+    // //CUSTO DE COMPRA INFO
     const custoDeCompraInfo = document.getElementById('custo-de-compra-info');
     const ccInfo = document.getElementById('cc-info');
-    custoDeCompraInfo.addEventListener('mouseenter', () => {
+    custoDeCompraInfo.addEventListener('click', () => {
+        if (ccInfo.style.display == "none") {
             ccInfo.style.display = "flex"
+        } else {
+            ccInfo.style.display = "none"
+        }
     })
+
     custoDeCompraInfo.addEventListener('mouseleave', () => {
         ccInfo.style.display = "none"
     })
+
+
 
 
 
