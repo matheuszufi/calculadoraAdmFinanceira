@@ -6,236 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulas Administração Financeira</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
 
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
-
-        * {
-            box-sizing: border-box;
-            font-family: 'Poppins';
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            display: flex;
-            flex-direction: column;
-            background: rgba(186, 194, 207, 0.774);
-            width: 100%;
-            height: 100vh;
-        
-        }
-
-        #calculadoras {
-            display: flex;
-            flex-wrap: wrap;
-         justify-content: center;
-          
-            transition: 0.4s;
-            /* margin-top: 90px; */
-            height: 80vh;
-            /* background-color: red; */
-            overflow-y: scroll;
-        }
-
-
-
-        #frm1, #frm2, #frm3, #frm4, #frm5, #frm6, #frm7 {
-            background-color: rgba(255, 255, 255, 0.3);
-            border: 1px solid white;
-            color: white;
-            display: none;
-            flex-direction: column;
-            width: 350px;
-            justify-content: center;
-            align-items: center;
-            padding: 4px;
-            margin: 4px;
-            border-radius: 8px;
-            text-align: center;
-            transition: 0.4s;
-            scale: 0.1;
-            opacity: 0;
-            
-        }
- 
-        #frm1 input, #frm2 input, #frm3 input, #frm4 input, #frm5 input, #frm6 input, #frm7 input {
-            border: 1px solid grey;
-            transition: 0.4s;
-        }
-
-        #frm1:hover, #frm2:hover, #frm3:hover, #frm4:hover, #frm5:hover, #frm6:hover, #frm7:hover {
-            background-color: rgba(61, 61, 61, 0.4);
-        }
-
-        #frm1:hover input, #frm2:hover input, #frm3:hover input, #frm4:hover input, #frm5:hover input, #frm6:hover input, #frm7:hover input {
-            border: 1px solid rgba(255, 255, 255, 0.4);
-        }
-
-        #div-lista {
-            display: flex;
-            font-size: 20px;
-            user-select: none;
-            width: 100%;   
-            /* justify-content: space-around;    */
-            position: fixed;
-            z-index: 10;
-            overflow-x: scroll;
-            left: 0;
-            bottom: 0;
-            right: 0;
-        }
-
-        #div-lista ul {
-            display: flex;
-            width: 100%;
-            /* justify-content: center; */
-            /* background-color: rgba(154, 154, 154, 0.377); */
-            /* padding: 4px; */
-        }
-
-        #div-lista li:hover {
-            background-color: rgb(160, 160, 160);
-        }
-
-        #div-lista li {
-            transition: 0.5s;
-            font-family: 'Poppins';
-            background-color: grey;
-            color: rgb(255, 255, 255);
-            display: flex;
-            align-items:center;
-            padding: 12px;
-            list-style: none;
-            border: 1px solid rgb(123, 123, 123);
-            text-align: center;
-            justify-content: space-around;
-            font-weight: 700;
-            /* border-radius: 4px; */
-            margin:2px;
-        }
-
-        input[type=button] {
-            margin-top: 8px;
-            border: none;
-            padding: 8px;
-        }
-
-        .cresultado {
-            margin-top: 8px;
-            border: 1px solid grey;
-            border-radius: 4px;
-            background-color: rgba(240, 240, 240, 0.4);
-            height: 40px;
-            width: 150px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        input[type=number] {
-            border: none;
-            background-color: rgba(108, 108, 108, 0.3);
-            border-radius: 2px;
-            color: white;
-            text-align: center;
-        }
-
-
-        #cp-info, #cc-info{
-            display: none;
-            background-color: rgba(163, 163, 163, 0.845);
-            position: absolute;
-            padding: 12px;
-            color: rgb(255, 255, 255);
-            border-radius: 0px 4px 4px 4px;
-            width: 200px;
-            border: 1px solid rgba(255, 255, 255, 0.484);
-            font-family: 'Poppins';
-            font-weight: bolder;
-            text-shadow: 1px 1px 1px black;
-            justify-content: center;
-            user-select: none;
-        }
-       
-        #lec-info {
-            display: none;
-  
-            position: absolute;
-            padding: 12px;
-            color: rgb(255, 255, 255);
-            width: 200px;
-       
-            font-family: 'Poppins';
-            font-weight: bolder;
-            text-shadow: 1px 1px 1px black;
-            justify-content: center;
-        }
-
-        #lec-info img {
-            width: 240px;
-            border-radius: 4px;
-            border: 1px solid black;
-        }
-
-
-        #pformula {
-            font-size: 12px;
-            font-style: italic;
-            font-weight: 200;
-        }
-
-        #btn-calcular {
-            border: none;
-            color: rgb(255, 255, 255);
-            text-shadow: 1px 1px 1px rgba(161, 161, 161, 0.445);
-            border-radius: 8px;
-            padding: 12px;
-            border: 1px solid white;
-            background-color: rgba(255, 255, 255, 0.493);
-            margin: 8px;
-            width: 150px;
-            transition: 0.4s;
-            font-weight: bolder;
-        }
-        #btn-calcular:hover {
-            background-color: rgba(255, 255, 255, 0.8);
-            border: 1px solid rgb(107, 107, 107);
-            color: rgb(122, 122, 122);
-        }
-
-
-        @media only screen and (max-width: 600px) {
-            #div-lista li {
-                margin: 0px;
-                padding: 0px 8px;
-                font-size: 16px;
-                font-weight: 400;
-                
-            }
-            #frm1, #frm2, #frm3, #frm4, #frm5, #frm6, #frm7 {
-                width: 100%;
-            }
-            #calculadoras {
-                height: 84vh;
-            }
-        }
-
-
-        form i {
-            transition: 0.4s;
-        }
-        form i:hover {
-            color: rgb(68, 68, 68);
-            scale: 1.5;
-        }
-
-
-
-
-
-    </style>
 </head>
 <body>
       
@@ -248,7 +20,7 @@
             <li id="co-btn">Ciclo Operacional</li>
             <li id="pmp-btn">Prazo Médio de Pagamento</li>
             <li id="cf-btn">Ciclo Financeiro</li>
-            <li id="cf-btn">Juros</li>
+            <li id="mont-btn">Juros Composto</li>
          
    
         </ul>
@@ -384,7 +156,7 @@
             <input id="btn-calcular" type="button" onclick="Calculate6()" value="CALCULAR">
         </form>
 
-        <!-- CICLO FINANCEIRAO -->
+        <!-- CICLO FINANCEIRO -->
         <form id="frm7" style="scale: 0.1; opacity: 0; display: none;">
             <h2>CICLO FINANCEIRO</h2>
 
@@ -402,7 +174,23 @@
             <input id="btn-calcular" type="button" onclick="Calculate7()" value="CALCULAR">
         </form>
 
+      <!-- Montante -->
+      <form id="frm8" style="scale: 0.1; opacity: 0; display: none;">
+        <h2>Juros Compostos</h2>
 
+        <p>Valor Inicial</p>
+        <input type="number" id="mont-valor-inicial" placeholder="">
+    
+        <p>Taxa de Juros Anual</p>
+        <input type="number" id="mont-taxa-juros" placeholder="">     
+        
+        <p>Tempo (Anos)</p>
+        <input type="number" id="mont-tempo" placeholder=""> 
+    
+        <p class="cresultado" id="montante"></p>
+
+        <input id="btn-calcular" type="button" onclick="Calculate8()" value="CALCULAR">
+    </form>
 
 
 
@@ -704,6 +492,61 @@
 
         document.getElementById("ciclo-financeiro").innerHTML = `${cicloFinanceiro} DIAS`;
     }
+
+
+
+
+
+
+    // MONTANTE 
+    const montBtn = document.getElementById('mont-btn');
+
+    const montForm = document.getElementById('frm8');
+    montBtn.addEventListener('click', () => {
+          
+        if (montForm.style.display == "none") {
+            montForm.style.display = "flex" 
+            montForm.style.opacity = "1"
+            montBtn.style.background = "rgba(85, 255, 0, 0.395)"  
+            setTimeout(animMont, 10)
+            function animMont () {
+                montForm.style.scale = "1"
+            }
+        } else {
+            montForm.style.scale = "0.1"
+            montForm.style.opacity = "0"
+            montBtn.style.background = "grey"  
+            setTimeout(animMontBack, 500)
+            function animMontBack() {
+                montForm.style.display = "none"    
+            }
+        }
+    })
+
+    function Calculate8() {
+        var valorInicial = parseInt(document.getElementById("mont-valor-inicial").value);
+        var taxaDeJuros = parseInt(document.getElementById("mont-taxa-juros").value);
+        var montTempo = parseFloat(document.getElementById("mont-tempo").value);
+
+
+        var montante = (valorInicial * Math.pow(1 + taxaDeJuros / 100, montTempo)).toFixed(2);
+        document.getElementById("montante").innerHTML = `R$ ${montante}`;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
