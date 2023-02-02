@@ -20,7 +20,8 @@
             <li id="co-btn">Ciclo Operacional</li>
             <li id="pmp-btn">Prazo Médio de Pagamento</li>
             <li id="cf-btn">Ciclo Financeiro</li>
-            <li id="mont-btn">Juros Composto</li>
+            <li id="juros-comp-btn">Juros Composto</li>
+            <li id="juros-comp-inverso-btn">Juros Composto Inverso</li>
          
    
         </ul>
@@ -174,7 +175,7 @@
             <input id="btn-calcular" type="button" onclick="Calculate7()" value="CALCULAR">
         </form>
 
-      <!-- Montante -->
+      <!-- JUROS COMPOSTOS -->
       <form id="frm8" style="scale: 0.1; opacity: 0; display: none;">
         <h2>Juros Compostos</h2>
 
@@ -192,6 +193,23 @@
         <input id="btn-calcular" type="button" onclick="Calculate8()" value="CALCULAR">
     </form>
 
+          <!-- JUROS COMPOSTOS INVERSO -->
+          <form id="frm9" style="scale: 0.1; opacity: 0; display: none;">
+            <h2>Juros Compostos Inverso</h2>
+    
+            <p>Valor Desejavel a Atingir</p>
+            <input type="number" id="mont-inv-valor-desejavel" placeholder="">
+        
+            <p>Taxa de Juros Anual</p>
+            <input type="number" id="mont-inv-taxa-juros" placeholder="">     
+            
+            <p>Tempo (Anos)</p>
+            <input type="number" id="mont-inv-tempo" placeholder=""> 
+        
+            <p class="cresultado" id="montante-inv"></p>
+    
+            <input id="btn-calcular" type="button" onclick="Calculate9()" value="CALCULAR">
+        </form>
 
 
     </div>
@@ -498,8 +516,8 @@
 
 
 
-    // MONTANTE 
-    const montBtn = document.getElementById('mont-btn');
+    // JUROS COMPOSTO
+    const montBtn = document.getElementById('juros-comp-btn');
 
     const montForm = document.getElementById('frm8');
     montBtn.addEventListener('click', () => {
@@ -531,6 +549,42 @@
 
         var montante = (valorInicial * Math.pow(1 + taxaDeJuros / 100, montTempo)).toFixed(2);
         document.getElementById("montante").innerHTML = `R$ ${montante}`;
+    }
+
+
+    // JUROS COMPOSTO INVERSO
+    const jurosCompInvBtn = document.getElementById('juros-comp-inverso-btn');
+
+    const jurosCompInversoForm = document.getElementById('frm9');
+    jurosCompInvBtn.addEventListener('click', () => {
+          
+        if (jurosCompInversoForm.style.display == "none") {
+            jurosCompInversoForm.style.display = "flex" 
+            jurosCompInversoForm.style.opacity = "1"
+            jurosCompInvBtn.style.background = "rgba(85, 255, 0, 0.395)"  
+            setTimeout(animJurosInv, 10)
+            function animJurosInv () {
+                jurosCompInversoForm.style.scale = "1"
+            }
+        } else {
+            jurosCompInversoForm.style.scale = "0.1"
+            jurosCompInversoForm.style.opacity = "0"
+            jurosCompInvBtn.style.background = "grey"  
+            setTimeout(animJurosInvBack, 500)
+            function animJurosInvBack() {
+                jurosCompInversoForm.style.display = "none"    
+            }
+        }
+    })
+
+    function Calculate9() {
+        var valorDesejavel = parseInt(document.getElementById("mont-inv-valor-desejavel").value);
+        var taxaDeJurosInv = parseInt(document.getElementById("mont-inv-taxa-juros").value);
+        var montTempoInv = parseFloat(document.getElementById("mont-inv-tempo").value);
+
+
+        var montanteInv = (valorDesejavel / Math.pow(1 + taxaDeJurosInv/100, montTempoInv)).toFixed(2);
+        document.getElementById("montante-inv").innerHTML = `R$ ${montanteInv}`;
     }
 
 

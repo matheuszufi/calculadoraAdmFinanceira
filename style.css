@@ -31,7 +31,7 @@ body {
 
 
 
-#frm1, #frm2, #frm3, #frm4, #frm5, #frm6, #frm7, #frm8 {
+#frm1, #frm2, #frm3, #frm4, #frm5, #frm6, #frm7, #frm8, #frm9 {
     background-color: rgba(255, 255, 255, 0.3);
     border: 1px solid white;
     color: white;
@@ -50,16 +50,16 @@ body {
     
 }
 
-#frm1 input, #frm2 input, #frm3 input, #frm4 input, #frm5 input, #frm6 input, #frm7 input {
+#frm1 input, #frm2 input, #frm3 input, #frm4 input, #frm5 input, #frm6 input, #frm7 input, #frm8 input, #frm9 input {
     border: 1px solid grey;
     transition: 0.4s;
 }
 
-#frm1:hover, #frm2:hover, #frm3:hover, #frm4:hover, #frm5:hover, #frm6:hover, #frm7:hover {
+#frm1:hover, #frm2:hover, #frm3:hover, #frm4:hover, #frm5:hover, #frm6:hover, #frm7:hover, #frm8:hover, #frm9:hover {
     background-color: rgba(61, 61, 61, 0.4);
 }
 
-#frm1:hover input, #frm2:hover input, #frm3:hover input, #frm4:hover input, #frm5:hover input, #frm6:hover input, #frm7:hover input {
+#frm1:hover input, #frm2:hover input, #frm3:hover input, #frm4:hover input, #frm5:hover input, #frm6:hover input, #frm7:hover input, #frm8:hover input, #frm9:hover input {
     border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
@@ -204,7 +204,7 @@ input[type=number] {
         font-weight: 400;
         
     }
-    #frm1, #frm2, #frm3, #frm4, #frm5, #frm6, #frm7 {
+    #frm1, #frm2, #frm3, #frm4, #frm5, #frm6, #frm7, #frm8, #frm9 {
         width: 100%;
     }
     #calculadoras {
