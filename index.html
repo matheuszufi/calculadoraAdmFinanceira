@@ -30,10 +30,13 @@
         #calculadoras {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
-            margin: 8px;
+         justify-content: center;
+          
             transition: 0.4s;
-            margin-top: 90px;
+            /* margin-top: 90px; */
+            height: 80vh;
+            /* background-color: red; */
+            overflow-y: scroll;
         }
 
 
@@ -75,17 +78,20 @@
             font-size: 20px;
             user-select: none;
             width: 100%;   
-            justify-content: space-around;   
+            /* justify-content: space-around;    */
             position: fixed;
             z-index: 10;
             overflow-x: scroll;
+            left: 0;
+            bottom: 0;
+            right: 0;
         }
 
         #div-lista ul {
             display: flex;
             width: 100%;
-            justify-content: center;
-            background-color: rgba(154, 154, 154, 0.377);
+            /* justify-content: center; */
+            /* background-color: rgba(154, 154, 154, 0.377); */
             padding: 4px;
         }
 
@@ -205,15 +211,15 @@
                 margin: 0px;
                 padding: 6px;
                 font-size: 16px;
-                /* font-weight: 400; */
+                font-weight: 400;
                 
             }
             #frm1, #frm2, #frm3, #frm4, #frm5, #frm6, #frm7 {
                 width: 100%;
             }
             #calculadoras {
-            margin-top: 60px;
-        }
+                height: 84vh;
+            }
         }
 
 
@@ -235,15 +241,15 @@
       
     <div id="div-lista">
         <ul>
-            <li id="lec-btn">LEC</li>
-            <li id="lec-juros-btn">LEC c/ JUROS</li>
-            <li id="pme-btn">PME</li>
-            <li id="pmc-btn">PMC</li>
-            <li id="co-btn">CO</li>
-            <li id="pmp-btn">PMP</li>
-            <li id="cf-btn">CF</li>
+            <li id="lec-btn">Lote Economico de Compra</li>
+            <li id="lec-juros-btn">Lote Economico de Compra c/ JUROS</li>
+            <li id="pme-btn">Prazo Médio de Estoque</li>
+            <li id="pmc-btn">Prazo Médio de Compra</li>
+            <li id="co-btn">Ciclo Operacional</li>
+            <li id="pmp-btn">Prazo Médio de Pagamento</li>
+            <li id="cf-btn">Ciclo Financeiro</li>
             <li id="cf-btn">Juros</li>
-            <li id="cf-btn">Juros</li>
+         
    
         </ul>
     </div>
@@ -258,7 +264,7 @@
 
 
     <!-- LOTE ECONOMICO DE COMPRA SEM JUROS -->
-    <form id="frm1">
+    <form id="frm1" style="scale: 0.1; opacity: 0; display: none;">
         <h2>LOTE ECONÔMICO DE COMPRA</h2>
 
             <p>Custo de Produção  <span><i id="custo-de-producao-info"class="fa-solid fa-circle-info"></i></span></p><div id="cp-info">Também conhecido como custo de preparação ou custo de obtenção.</div>
@@ -280,7 +286,7 @@
         </form>
 
         <!-- LOTE ECONOMICO DE COMPRA COM JUROS -->
-        <form id="frm2">
+        <form id="frm2" style="scale: 0.1; opacity: 0; display: none;">
             <h2>LOTE ECÔNOMICO DE COMPRA c/ JUROS</h2>
 
             <p>Custo de Produção</p>
@@ -301,7 +307,7 @@
         </form>
 
         <!-- PRAZO MÉDIO DE ESTOQUE -->
-        <form id="frm3">
+        <form id="frm3" style="scale: 0.1; opacity: 0; display: none;">
             <h2>PRAZO MÉDIO DE ESTOQUE</h2>
 
             <p>Saldo de Estoque do Ano atual</p>
@@ -319,7 +325,7 @@
         </form>
 
         <!-- PRAZO MÉDIO DE COBRANÇA -->
-        <form id="frm4">
+        <form id="frm4" style="scale: 0.1; opacity: 0; display: none;">
             <h2>PRAZO MÉDIO DE COBRANÇA</h2>
 
             <p>Saldo de Duplicatas do Ano atual</p>
@@ -337,7 +343,7 @@
         </form>
 
         <!-- CICLO OPERACIONAL -->
-        <form id="frm5">
+        <form id="frm5" style="scale: 0.1; opacity: 0; display: none;">
             <h2>CICLO OPERACIONAL</h2>
 
             <p>Prazo médio de Estoque</p>
@@ -352,7 +358,7 @@
         </form>
 
         <!-- PRAZO MÉDIO DE PAGAMENTO -->
-        <form id="frm6">
+        <form id="frm6" style="scale: 0.1; opacity: 0; display: none;">
             <h2>PRAZO MÉDIO DE PAGAMENTO</h2>
 
             <p>Fornecedor Ano Anterior</p>
@@ -379,7 +385,7 @@
         </form>
 
         <!-- CICLO FINANCEIRAO -->
-        <form id="frm7">
+        <form id="frm7" style="scale: 0.1; opacity: 0; display: none;">
             <h2>CICLO FINANCEIRO</h2>
 
             <p>Prazo Médio de Estoque</p>
