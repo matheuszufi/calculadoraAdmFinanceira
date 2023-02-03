@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-
+@font-face {font-family: calendar; src: url(./calendar\ note\ tfb.ttf);}
 * {
     box-sizing: border-box;
     font-family: 'Poppins';
@@ -11,7 +11,7 @@
 body {
     display: flex;
     flex-direction: column;
-    background: rgba(117, 162, 236, 0.774);
+    background: rgba(78, 70, 124, 0.718);
     width: 100%;
     height: 100vh;
 
@@ -24,9 +24,11 @@ body {
   
     transition: 0.4s;
     /* margin-top: 90px; */
-    height: 80vh;
+    height: calc(100vh - 150px);
     /* background-color: red; */
     overflow-y: scroll;
+    border-bottom: 1px solid black;
+    box-shadow: 0px 8px 5px rgba(0, 0, 0, 0.6);
 }
 
 
@@ -92,7 +94,7 @@ body {
 #div-lista li {
     transition: 0.5s;
     font-family: 'Poppins';
-    background-color: grey;
+    background: grey;
     color: rgb(255, 255, 255);
     display: flex;
     align-items:center;
@@ -102,8 +104,9 @@ body {
     text-align: center;
     justify-content: space-around;
     font-weight: 700;
-    /* border-radius: 4px; */
+    border-radius: 8px;
     margin:2px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 input[type=button] {
@@ -196,9 +199,9 @@ input[type=number] {
 }
 
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1000px) {
     #div-lista li {
-        margin: 0px;
+        margin: 0px 4px;
         padding: 0px 8px;
         font-size: 16px;
         font-weight: 400;
@@ -211,6 +214,9 @@ input[type=number] {
         height: calc(100vh - 110px);
     }
 }
+
+
+
 
 
 form i {
