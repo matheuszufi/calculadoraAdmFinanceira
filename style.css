@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 @font-face {font-family: heavitas; src: url(./Heavitas.ttf);}
+@font-face {font-family: reglise; src: url(./Reglisse_Fill.otf);}
 * {
     box-sizing: border-box;
     font-family: 'Poppins';
@@ -107,7 +108,7 @@ body {
     text-align: center;
     justify-content: space-around;
     /* font-weight: 700; */
-    font-size: 16px;
+    font-size: 20px;
     border-radius: 8px;
     margin:2px;
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
@@ -116,7 +117,7 @@ body {
 
 #div-lista li p {
     width: 150px;
-    font-family: 'heavitas';
+    font-family: 'reglise';
 }
 input[type=button] {
     margin-top: 8px;
@@ -212,7 +213,7 @@ input[type=number] {
     #div-lista li {
         margin: 0px 4px;
         padding: 0px 4px;
-        font-size: 16px;
+        font-size: 20px;
         font-weight: 400;
         
     }
