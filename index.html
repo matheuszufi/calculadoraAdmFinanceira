@@ -13,16 +13,16 @@
       
     <div id="div-lista">
         <ul>
-            <li id="lec-btn">Lote Economico de Compra</li>
-            <li id="lec-juros-btn">LEC c/ JUROS</li>
-            <li id="pme-btn">Prazo Médio de Estoque</li>
-            <li id="pmc-btn">Prazo Médio de Compra</li>
-            <li id="co-btn">Ciclo Operacional</li>
-            <li id="pmp-btn">Prazo Médio de Pagamento</li>
-            <li id="cf-btn">Ciclo Financeiro</li>
-            <li id="juros-comp-btn">Juros Composto</li>
-            <li id="juros-comp-aportes-btn">Juros Composto c/ Aportes</li>
-            <li id="juros-comp-inverso-btn">Juros Composto Inverso</li>
+            <li id="lec-btn"><p>Lote Economico de Compra</p></li>
+            <li id="lec-juros-btn"><p>Lote Economico de Compra c/ JUROS</p></li>
+            <li id="pme-btn"><p>Prazo Médio de Estoque</p></li>
+            <li id="pmc-btn"><p>Prazo Médio de Compra</p></li>
+            <li id="co-btn"><p>Ciclo Operacional</p></li>
+            <li id="pmp-btn"><p>Prazo Médio de Pagamento</p></li>
+            <li id="cf-btn"><p>Ciclo Financeiro</p></li>
+            <li id="juros-comp-btn"><p>Juros Composto</p></li>
+            <li id="juros-comp-aportes-btn"><p>Juros Composto c/ Aportes</p></li>
+            <li id="juros-comp-inverso-btn"><p>Juros Composto Inverso</p></li>
          
    
         </ul>
@@ -52,10 +52,7 @@
                 
             <p class="cresultado" id="lote-economico-de-compra"></p>
 
-            <span id="pformula">Fórmula  <i id="lote-economico-de-compra-info"class="fa-solid fa-circle-info"></i></span><div id="lec-info">
-                <!-- √ (2 x Custo de Produção) * Demanda / Custo de Compra -->
-             <img src="/lecformula.jpg">
-            </div>
+            <span id="pformula">Fórmula  <i id="lote-economico-de-compra-info"class="fa-solid fa-circle-info"></i></span><div id="lec-info"><!-- √ (2 x Custo de Produção) * Demanda / Custo de Compra --></div>
             <input id="btn-calcular" type="button" onclick="Calculate()" value="CALCULAR">
         </form>
 
@@ -260,6 +257,7 @@
             lecForm.style.display = "flex" 
             lecForm.style.opacity = "1"
             lecBtn.style.background = "rgba(85, 255, 0, 0.395)"  
+            lecBtn.style.color = 'white';
             setTimeout(animLec, 10)
             function animLec () {
                 lecForm.style.scale = "1"
@@ -268,6 +266,7 @@
             lecForm.style.scale = "0.1"
             lecForm.style.opacity = "0"
             lecBtn.style.background = "grey"  
+            lecBtn.style.color = 'aqua';
             setTimeout(animLecBack, 500)
             function animLecBack() {
                 lecForm.style.display = "none"
@@ -305,6 +304,7 @@
           lecJurosForm.style.display = "flex" 
           lecJurosForm.style.opacity = "1"
           lecJurosBtn.style.background = "rgba(85, 255, 0, 0.395)"  
+          lecJurosBtn.style.color = 'white';
           setTimeout(animJurosLec, 10)
             function animJurosLec () {
                 lecJurosForm.style.scale = "1"
@@ -313,6 +313,7 @@
           lecJurosForm.style.scale = "0.1"
           lecJurosForm.style.opacity = "0"
           lecJurosBtn.style.background = "grey"
+          lecJurosBtn.style.color = 'aqua';
           setTimeout(animLecJurosBack, 500)
             function animLecJurosBack() {
                 lecJurosForm.style.display = "none"
@@ -345,6 +346,7 @@
           pmeForm.style.display = "flex" 
           pmeForm.style.opacity = "1"
           pmeBtn.style.background = "rgba(85, 255, 0, 0.395)"  
+          pmeBtn.style.color = 'white';
           setTimeout(animJurosLec, 10)
             function animJurosLec () {
                 pmeForm.style.scale = "1"
@@ -353,6 +355,7 @@
           pmeForm.style.scale = "0.1"
           pmeForm.style.opacity = "0"
           pmeBtn.style.background = "grey"
+          pmeBtn.style.color = 'aqua';
           setTimeout(animpmeBack, 500)
             function animpmeBack() {
                 pmeForm.style.display = "none"
@@ -384,6 +387,7 @@
           pmcForm.style.display = "flex" 
           pmcForm.style.opacity = "1"
           pmcBtn.style.background = "rgba(85, 255, 0, 0.395)"  
+          pmcBtn.style.color = 'white';
           setTimeout(animJurosLec, 10)
             function animJurosLec () {
                 pmcForm.style.scale = "1"
@@ -392,6 +396,7 @@
           pmcForm.style.scale = "0.1"
           pmcForm.style.opacity = "0"
           pmcBtn.style.background = "grey"
+          pmcBtn.style.color = 'aqua';
           setTimeout(animpmcBack, 500)
             function animpmcBack() {
                 pmcForm.style.display = "none"
@@ -422,7 +427,8 @@
         if (coForm.style.display == "none") {
           coForm.style.display = "flex" 
           coForm.style.opacity = "1"
-          coBtn.style.background = "rgba(85, 255, 0, 0.395)"  
+          coBtn.style.background = "rgba(85, 255, 0, 0.395)" 
+          coBtn.style.color = 'white'; 
           setTimeout(animJurosLec, 10)
             function animJurosLec () {
                 coForm.style.scale = "1"
@@ -431,6 +437,7 @@
           coForm.style.scale = "0.1"
           coForm.style.opacity = "0"
           coBtn.style.background = "grey"
+          coBtn.style.color = 'aqua'; 
           setTimeout(animcoBack, 500)
             function animcoBack() {
                 coForm.style.display = "none"
@@ -458,7 +465,8 @@
         if (pmpForm.style.display == "none") {
           pmpForm.style.display = "flex" 
           pmpForm.style.opacity = "1"
-          pmpBtn.style.background = "rgba(85, 255, 0, 0.395)"  
+          pmpBtn.style.background = "rgba(85, 255, 0, 0.395)"
+          pmpBtn.style.color = 'white';   
           setTimeout(animJurosLec, 10)
             function animJurosLec () {
                 pmpForm.style.scale = "1"
@@ -467,6 +475,7 @@
           pmpForm.style.scale = "0.1"
           pmpForm.style.opacity = "0"
           pmpBtn.style.background = "grey"
+          pmpBtn.style.color = 'aqua';  
           setTimeout(animpmpBack, 500)
             function animpmpBack() {
                 pmpForm.style.display = "none"
@@ -503,7 +512,8 @@
         if (cfForm.style.display == "none") {
           cfForm.style.display = "flex" 
           cfForm.style.opacity = "1"
-          cfBtn.style.background = "rgba(85, 255, 0, 0.395)"  
+          cfBtn.style.background = "rgba(85, 255, 0, 0.395)"
+          cfBtn.style.color = 'white';    
           setTimeout(animCf, 10)
             function animCf () {
                 cfForm.style.scale = "1"
@@ -512,6 +522,7 @@
           cfForm.style.scale = "0.1"
           cfForm.style.opacity = "0"
           cfBtn.style.background = "grey"
+          cfBtn.style.color = 'aqua';   
           setTimeout(animcfBack, 500)
             function animcfBack() {
                 cfForm.style.display = "none"
@@ -548,6 +559,7 @@
             montForm.style.display = "flex" 
             montForm.style.opacity = "1"
             montBtn.style.background = "rgba(85, 255, 0, 0.395)"  
+            montBtn.style.color = 'white';   
             setTimeout(animMont, 10)
             function animMont () {
                 montForm.style.scale = "1"
@@ -556,6 +568,7 @@
             montForm.style.scale = "0.1"
             montForm.style.opacity = "0"
             montBtn.style.background = "grey"  
+            montBtn.style.color = 'aqua';   
             setTimeout(animMontBack, 500)
             function animMontBack() {
                 montForm.style.display = "none"    
@@ -583,6 +596,7 @@
             jurosCompAportesForm.style.display = "flex" 
             jurosCompAportesForm.style.opacity = "1"
             jurosCompAportesBtn.style.background = "rgba(85, 255, 0, 0.395)"  
+            jurosCompAportesBtn.style.color = 'white';   
             setTimeout(animJurosAportes, 10)
             function animJurosAportes () {
                 jurosCompAportesForm.style.scale = "1"
@@ -591,6 +605,7 @@
             jurosCompAportesForm.style.scale = "0.1"
             jurosCompAportesForm.style.opacity = "0"
             jurosCompAportesBtn.style.background = "grey"  
+            jurosCompAportesBtn.style.color = 'aqua';
             setTimeout(animJurosAportesBack, 500)
             function animJurosAportesBack() {
                 jurosCompAportesForm.style.display = "none"    
@@ -624,6 +639,7 @@
             jurosCompInversoForm.style.display = "flex" 
             jurosCompInversoForm.style.opacity = "1"
             jurosCompInvBtn.style.background = "rgba(85, 255, 0, 0.395)"  
+            jurosCompInvBtn.style.color = 'white';
             setTimeout(animJurosInv, 10)
             function animJurosInv () {
                 jurosCompInversoForm.style.scale = "1"
@@ -631,7 +647,8 @@
         } else {
             jurosCompInversoForm.style.scale = "0.1"
             jurosCompInversoForm.style.opacity = "0"
-            jurosCompInvBtn.style.background = "grey"  
+            jurosCompInvBtn.style.background = "grey"
+            jurosCompInvBtn.style.color = 'aqua';  
             setTimeout(animJurosInvBack, 500)
             function animJurosInvBack() {
                 jurosCompInversoForm.style.display = "none"    
