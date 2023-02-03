@@ -21,6 +21,7 @@
             <li id="pmp-btn">Prazo Médio de Pagamento</li>
             <li id="cf-btn">Ciclo Financeiro</li>
             <li id="juros-comp-btn">Juros Composto</li>
+            <li id="juros-comp-aportes-btn">Juros Composto c/ Aportes</li>
             <li id="juros-comp-inverso-btn">Juros Composto Inverso</li>
          
    
@@ -191,6 +192,30 @@
         <p class="cresultado" id="montante"></p>
 
         <input id="btn-calcular" type="button" onclick="Calculate8()" value="CALCULAR">
+    </form>
+     
+    <!-- JUROS COMPOSTOS APORTES -->
+    <form id="frm10" style="scale: 0.1; opacity: 0; display: none;">
+        <h2>Juros Compostos c/ Aportes</h2>
+
+        <p>Investimento Inicial</p>
+        <input type="number" id="jcp-valor-inicial" placeholder="">
+    
+        <p>Valor dos aportes mensais</p>
+        <input type="number" id="jcp-valor-aportes-mensais" placeholder="">
+    
+        <p>Taxa de Juros Anual</p>
+        <input type="number" id="jcp-taxa-de-juros" placeholder="">     
+
+        <p>Frequencia (12 = juros compostos mensais)</p>
+        <input type="number" id="jcp-frequencia" placeholder=""> 
+        
+        <p>Tempo (anos)</p>
+        <input type="number" id="jcp-anos" placeholder=""> 
+    
+        <p class="cresultado" id="jcp-montante"></p>
+
+        <input id="btn-calcular" type="button" onclick="Calculate10()" value="CALCULAR">
     </form>
 
           <!-- JUROS COMPOSTOS INVERSO -->
@@ -550,6 +575,46 @@
         var montante = (valorInicial * Math.pow(1 + taxaDeJuros / 100, montTempo)).toFixed(2);
         document.getElementById("montante").innerHTML = `R$ ${montante}`;
     }
+
+    // JUROS COMPOSTO c/ APORTES
+    const jurosCompAportesBtn = document.getElementById('juros-comp-aportes-btn');
+
+    const jurosCompAportesForm = document.getElementById('frm10');
+    jurosCompAportesBtn.addEventListener('click', () => {
+          
+        if (jurosCompAportesForm.style.display == "none") {
+            jurosCompAportesForm.style.display = "flex" 
+            jurosCompAportesForm.style.opacity = "1"
+            jurosCompAportesBtn.style.background = "rgba(85, 255, 0, 0.395)"  
+            setTimeout(animJurosAportes, 10)
+            function animJurosAportes () {
+                jurosCompAportesForm.style.scale = "1"
+            }
+        } else {
+            jurosCompAportesForm.style.scale = "0.1"
+            jurosCompAportesForm.style.opacity = "0"
+            jurosCompAportesBtn.style.background = "grey"  
+            setTimeout(animJurosAportesBack, 500)
+            function animJurosAportesBack() {
+                jurosCompAportesForm.style.display = "none"    
+            }
+        }
+    })
+
+    function Calculate10() {
+        var p = parseInt(document.getElementById("jcp-valor-inicial").value);
+        var A = parseInt(document.getElementById("jcp-valor-aportes-mensais").value);
+        var r = parseInt(document.getElementById("jcp-taxa-de-juros").value);
+        var n = parseFloat(document.getElementById("jcp-frequencia").value);
+        var t = parseFloat(document.getElementById("jcp-anos").value);
+
+
+        var jcpMontante = ((p + A) * ((1 + (r/100) / n) ** (n * t)) - (A * ((((1 + (r/100) / n) ** (n * t)) - 1)) / ((r/100) / n))).toFixed(2);
+        document.getElementById("jcp-montante").innerHTML = `R$ ${jcpMontante}`;
+    }
+
+
+
 
 
     // JUROS COMPOSTO INVERSO
