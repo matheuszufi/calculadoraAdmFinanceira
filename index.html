@@ -204,11 +204,8 @@
         <p>Valor dos aportes mensais</p>
         <input type="number" id="jcp-valor-aportes-mensais" placeholder="">
     
-        <p>Taxa de Juros Anual</p>
+        <p>Taxa de Juros Anual (Decimal)</p>
         <input type="number" id="jcp-taxa-de-juros" placeholder="">     
-
-        <p>Frequencia (12 = juros compostos mensais)</p>
-        <input type="number" id="jcp-frequencia" placeholder=""> 
         
         <p>Tempo (anos)</p>
         <input type="number" id="jcp-anos" placeholder=""> 
@@ -602,14 +599,14 @@
     })
 
     function Calculate10() {
-        var p = parseInt(document.getElementById("jcp-valor-inicial").value);
-        var A = parseInt(document.getElementById("jcp-valor-aportes-mensais").value);
-        var r = parseInt(document.getElementById("jcp-taxa-de-juros").value);
-        var n = parseFloat(document.getElementById("jcp-frequencia").value);
-        var t = parseFloat(document.getElementById("jcp-anos").value);
+        var jcpValorInicial = parseInt(document.getElementById("jcp-valor-inicial").value);
+        var jcpValorAportesMensais = parseInt(document.getElementById("jcp-valor-aportes-mensais").value);
+        var jcpTaxaDeJuros = parseFloat(document.getElementById("jcp-taxa-de-juros").value);
+        // var n = parseFloat(document.getElementById("jcp-frequencia").value);
+        var jcpAnos = parseInt(document.getElementById("jcp-anos").value);
 
 
-        var jcpMontante = ((p + A) * ((1 + (r/100) / n) ** (n * t)) - (A * ((((1 + (r/100) / n) ** (n * t)) - 1)) / ((r/100) / n))).toFixed(2);
+        var jcpMontante =  (jcpValorInicial * Math.pow(1 + jcpTaxaDeJuros/12, 12 * jcpAnos) + jcpValorAportesMensais * ((Math.pow(1 + jcpTaxaDeJuros/12, 12 * jcpAnos) - 1) / (jcpTaxaDeJuros/12))).toFixed(2)
         document.getElementById("jcp-montante").innerHTML = `R$ ${jcpMontante}`;
     }
 

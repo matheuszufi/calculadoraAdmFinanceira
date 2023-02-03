@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script>
+    function jurosCompostosComAporteMensal(P, r, n, t, aporteMensal) {
+        let M = P;
+        for (let i = 0; i < t * n; i++) {
+            M = M * (1 + r/n) + aporteMensal;
+        }
+        return M;
+    }
+
+    function calculate() {
+        let P = 1000;
+        let r = 0.12;
+        let n = 12;
+        let t = 2;
+        let aporteMensal = 100;
+
+        let M = jurosCompostosComAporteMensal(P, r, n, t, aporteMensal);
+
+        document.getElementById("result").innerHTML = "O montante final é: R$ " + M.toFixed(2);
+    }
+  </script>
+</head>
+<body>
+  <button onclick="calculate()">Calcular</button>
+  <p id="result"></p>
+</body>
+</html>
