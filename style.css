@@ -98,7 +98,7 @@ body {
     color: rgb(255, 255, 255);
     display: flex;
     align-items:center;
-    padding: 12px;
+    padding: 4px;
     list-style: none;
     border: 1px solid rgb(123, 123, 123);
     text-align: center;
@@ -202,7 +202,7 @@ input[type=number] {
 @media only screen and (max-width: 1000px) {
     #div-lista li {
         margin: 0px 4px;
-        padding: 0px 8px;
+        padding: 0px 4px;
         font-size: 16px;
         font-weight: 400;
         
