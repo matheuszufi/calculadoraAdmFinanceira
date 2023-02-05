@@ -45,25 +45,6 @@ body {
 
 }
 
-#decorations {
-    position: absolute;
-    /* z-index: -10; */
-}
-#deco1 {top: 100px;left: 36px; font-size: 120px;}
-#deco2 {bottom: 220px; right: 36px; font-size: 120px;}
-#deco3 { top: 220px; left: 36px; font-size: 80px;}
-#deco4 { top: 20px; left: 100px; font-size: 60px;transform: rotate(-30deg)}
-#deco5 { top: 20px; right: -40px; font-size: 60px;transform: rotate(30deg)}
-#deco6 {
-    width: 250px;
-    background-color: rgba(255, 255, 255, 0.4);
-    
-    height: 2px;
-    position: absolute;
-    top: 30px;
-    left: 0px;
-}
-
 #frm1, #frm2, #frm3, #frm4, #frm5, #frm6, #frm7, #frm8, #frm9, #frm10 {
     background-color: rgba(255, 174, 154, 0.759);
     border: 1px solid white;
