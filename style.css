@@ -25,7 +25,7 @@ body {
     display: flex;
     flex-wrap: wrap;
  justify-content: center;
- background: rgb(238,93,108);
+ /* background: rgb(238,93,108); */
     transition: 0.4s;
     color: white;
     /* margin-top: 90px; */
