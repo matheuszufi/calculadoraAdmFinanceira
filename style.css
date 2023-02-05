@@ -2,9 +2,11 @@
 
 @font-face {font-family: heavitas; src: url(./Heavitas.ttf);}
 @font-face {font-family: reglise; src: url(./Reglisse_Fill.otf);}
+@font-face {font-family: boston; src: url(./BOSTON\ CAPS.ttf);}
+@font-face {font-family: inlander; src: url(./Inlanders\ Demo.otf);}
 * {
     box-sizing: border-box;
-    font-family: 'Poppins';
+    /* font-family: 'Poppins'; */
     margin: 0;
     padding: 0;
 }
@@ -12,7 +14,7 @@
 body {
     display: flex;
     flex-direction: column;
-    background: rgba(0, 187, 197, 0.708);
+    background: rgba(251,144,98);
     width: 100%;
     height: 100vh;
 
@@ -22,7 +24,7 @@ body {
     display: flex;
     flex-wrap: wrap;
  justify-content: center;
- background: rgb(129, 125, 157);
+ background: rgb(238,93,108);
     transition: 0.4s;
     color: white;
     /* margin-top: 90px; */
@@ -36,10 +38,12 @@ body {
 
 
 #frm1, #frm2, #frm3, #frm4, #frm5, #frm6, #frm7, #frm8, #frm9, #frm10 {
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgb(255, 174, 154);
     border: 1px solid white;
-    /* color: white; */
+    color: white;
     display: none;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    /* font-family: 'inlander'; */
     flex-direction: column;
     width: 350px;
     justify-content: center;
@@ -51,12 +55,22 @@ body {
     transition: 0.4s;
     scale: 0.1;
     opacity: 0;
+    /* color: black; */
+    box-shadow: 2px 2px 5px black;
     
+}
+#frm1 h2, #frm2 h2, #frm3 h2, #frm4 h2, #frm5 h2, #frm6 h2, #frm7 h2, #frm8 h2, #frm9 h2, #frm10 h2 {
+    font-family: 'inlander';
+    padding: 20px 0px;
+}
+#frm1 p, #frm2 p, #frm3 p, #frm4 p, #frm5 p, #frm6 p, #frm7 p, #frm8 p, #frm9 p, #frm10 p {
+    font-family: 'Poppins';
 }
 
 #frm1 input, #frm2 input, #frm3 input, #frm4 input, #frm5 input, #frm6 input, #frm7 input, #frm8 input, #frm9 input, #frm10 input {
     border: 1px solid grey;
     transition: 0.4s;
+    
 }
 
 #frm1:hover, #frm2:hover, #frm3:hover, #frm4:hover, #frm5:hover, #frm6:hover, #frm7:hover, #frm8:hover, #frm9:hover, #frm10:hover {
@@ -98,13 +112,13 @@ body {
 #div-lista li {
     transition: 0.5s;
     text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.8);
-    background: grey;
-    color: aqua;
+    background: rgba(255, 255, 255, 0.481);
+    color: white;
     display: flex;
     align-items:center;
     padding: 4px;
     list-style: none;
-    border: 1px solid rgb(123, 123, 123);
+    border: 1px solid rgb(220, 220, 220);
     text-align: center;
     justify-content: space-around;
     /* font-weight: 700; */
@@ -116,8 +130,9 @@ body {
 }
 
 #div-lista li p {
-    width: 150px;
-    font-family: 'reglise';
+    width: 200px;
+    font-size: 24px;
+    font-family: 'inlander';
 }
 input[type=button] {
     margin-top: 8px;
@@ -131,7 +146,7 @@ input[type=button] {
     border-radius: 4px;
     background-color: rgba(240, 240, 240, 0.4);
     height: 40px;
-    width: 150px;
+    width: 180px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -213,7 +228,7 @@ input[type=number] {
     #div-lista li {
         margin: 0px 4px;
         padding: 0px 4px;
-        font-size: 20px;
+        font-size: 28px;
         font-weight: 400;
         
     }
