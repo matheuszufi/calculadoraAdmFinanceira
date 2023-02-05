@@ -15,7 +15,7 @@ body {
     display: flex;
     flex-direction: column;
     background: rgba(251,144,98);
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     /* overflow: hidden; */
 
@@ -25,8 +25,8 @@ body {
     display: flex;
     flex-wrap: wrap;
  justify-content: center;
- background: rgb(57, 150, 61);
- /* background: rgb(238,93,108); */
+ /* background: rgb(57, 150, 61); */
+ background: rgb(238,93,108);
     transition: 0.4s;
     color: white;
     /* margin-top: 90px; */
@@ -38,13 +38,7 @@ body {
     /* overflow: hidden; */
 }
 
-.deco {
-    position: absolute;
-    color: rgba(255, 255, 255, 0.3);
-   
 
-
-}
 
 #frm1, #frm2, #frm3, #frm4, #frm5, #frm6, #frm7, #frm8, #frm9, #frm10 {
     background-color: rgba(255, 174, 154, 0.759);
@@ -97,7 +91,7 @@ body {
     font-size: 20px;
     user-select: none;
     width: 100%;  
-    height: 110px;
+    height: 100px;
     /* background-color: rgb(255, 255, 255);  */
     /* justify-content: space-around;    */
     position: fixed;
