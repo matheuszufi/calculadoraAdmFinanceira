@@ -6,7 +6,7 @@
 @font-face {font-family: inlander; src: url(./Inlanders\ Demo.otf);}
 * {
     box-sizing: border-box;
-    /* font-family: 'Poppins'; */
+    font-family: 'Poppins';
     margin: 0;
     padding: 0;
 }
