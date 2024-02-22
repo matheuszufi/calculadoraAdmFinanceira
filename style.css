@@ -41,7 +41,7 @@ body {
 
 
 #frm1, #frm2, #frm3, #frm4, #frm5, #frm6, #frm7, #frm8, #frm9, #frm10 {
-    background-color: rgba(255, 174, 154, 0.759);
+    background-color: rgba(75, 75, 75, 0.75);
     border: 1px solid white;
     color: white;
     display: none;
