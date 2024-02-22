@@ -14,7 +14,7 @@
 body {
     display: flex;
     flex-direction: column;
-    background: rgba(251,144,98);
+    background: rgba(210,210,210);
     width: 100vw;
     height: 100vh;
     /* overflow: hidden; */
